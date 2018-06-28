@@ -38,10 +38,24 @@
 				<div class="navbar-end">
           <div class="navbar-item">
 					<div class="field is-grouped">
+            <% if user_signed_in? %>
 						<p class="control">
-							<%= link_to 'New Tweet', new_tweet_path, class: "button is-info is-inverted" %>
+							<%= link_to 'Tweet', new_tweet_path, class: "button is-link is-rounded has-text-weight-bold" %>
 						</p>
-            <p class="control button is-primary">Sign Up</p>
+              <p class="control">
+                <%= link_to current_user.name, edit_user_registration_path, class: "button has-text-info is-rounded has-text-weight-semibold" %>
+              </p>
+              <p class="control">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button is-info has-text-weight-semibold" %>
+              </p>
+            <% else %>
+              <p class="control">
+                <%= link_to "Log in", new_user_session_path, class: "button is-info is-inverted is-outlined is-rounded has-text-weight-semibold" %>
+              </p>
+              <p class="control">
+                <%= link_to "Sign up", new_user_registration_path, class: "button is-rounded is-info is-inverted has-text-weight-semibold" %>
+              </p>
+            <% end %>
             </div>
 					</div>
 				</div>
