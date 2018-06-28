@@ -1,0 +1,54 @@
+<div class="column is-one-quarter">
+<% if user_signed_in?%>
+  <nav class="panel">
+    <p class="panel-heading has-text-weight-bold">Profile</p>
+    <div class="panel-block">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/64x64.png" alt="">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p>
+            <strong><%= current_user.name %></strong><br>
+            <small><%= current_user.username %></small>
+          </p>
+        </div>
+      </article>
+    </div>
+    <div class="panel-block">
+			<div class="level is-mobile">
+				<div class="level-item has-centered-text">
+					<div>
+						<p class="heading">Tweets</p>
+						<p class="title is-6"><%= current_user.tweets.count %></p>
+					</div>
+				</div>
+				<div class="level-item has-centered-text">
+					<div>
+						<p class="heading">Following</p>
+						<p class="title is-6">123</p>
+					</div>
+				</div>
+					<div class="level-item has-centered-text">
+					<div>
+						<p class="heading">Followers</p>
+						<p class="title is-6">465K</p>
+					</div>
+				</div>
+			</div>
+		</div>
+  </nav>
+  <% end %>
+
+  <nav class="panel">
+    <p class="panel-heading has-text-weight-bold">Worldwide trends</p>
+    <a href="#" class="panel-block">Coutinho</a>
+    <a href="#" class="panel-block">Gabriel Jesus</a>
+    <a href="#" class="panel-block">Justice Kennedy1</a>
+    <a href="#" class="panel-block">Sérvia</a>
+    <a href="#" class="panel-block">#yağmur</a>
+    <a href="#" class="panel-block">#AMLOFEST</a>
+  </nav>   
+</div>
