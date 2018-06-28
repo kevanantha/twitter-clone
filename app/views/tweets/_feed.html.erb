@@ -19,14 +19,14 @@
 
       <div class="media-left">
         <figure class="image is-64x64">
-          <%= gravatar_image_tag(tweet.user.email, size: 64, alt: tweet.user.name) %>
+          <%= gravatar_image_tag(tweet.user.try(:email), size: 64, alt: tweet.user.try(:name)) %>
         </figure>
       </div>
 
       <div class="media-content">
         <div class="content">
-          <strong><%= tweet.user.name %></strong><br>
-          <small><%= tweet.user.username %></small>
+          <strong><%= tweet.user.try(:name) %></strong><br>
+          <small><%= tweet.user.try(:username) %></small>
           <p><%= tweet.tweet %></p>
         </div>
         <% if user_signed_in? && current_user.id == tweet.user_id %>
